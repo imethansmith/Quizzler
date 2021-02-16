@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var trueButton: UIButton!
@@ -69,6 +70,8 @@ class ViewController: UIViewController {
         // Update current question on main Label
         questionLabel.text = (nextQuestion)
         
+        // Show current score
+        scoreLabel.text = "Score: \(quizBrain.getScore())"
         // Update progress bar
         progressBar.progress = quizBrain.progressPerQuestion * Float(quizBrain.questionNumber)
     }

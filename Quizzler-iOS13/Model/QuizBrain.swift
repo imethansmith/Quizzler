@@ -34,6 +34,10 @@ struct QuizBrain {
         progressPerQuestion = 1.0 / Float(quiz.count)
     }
     
+    func getScore() -> Int {
+        return userScore
+    }
+    
     mutating func checkAnswer(_ answer: Bool) -> Bool {
         // Check answer validity, is it right or wrong?
         if (answer == quiz[questionNumber].answer) {
