@@ -10,9 +10,9 @@ import Foundation
 
 struct Question {
     let text: String
-    let answer: Int
+    let answer: Bool
     
-    init(q: String, a: Int) {
+    init(q: String, a: Bool) {
         text = q
         answer = a
     }

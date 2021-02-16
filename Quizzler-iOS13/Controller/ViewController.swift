@@ -29,11 +29,13 @@ class ViewController: UIViewController {
     
     @IBAction func answerButtonPressed(_ sender: UIButton) {
         // Assign binary conversion on answer given
-        let answer = { () -> Int in
+        let answer = { () -> Bool in
             if (sender.currentTitle == "True") {
-                return 1
+                // if true, return one
+                return true
             } else {
-                return 0
+                // if false, return 0
+                return false
             }
         }()
         
