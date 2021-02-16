@@ -31,6 +31,20 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5z-rs-Onr">
+                                        <rect key="frame" x="0.0" y="623" width="374" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="PCd-lo-8Fy"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Play Again" backgroundImage="Rectangle">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="playAgain:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fGB-BR-Hnb"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oVw-Hl-IRe">
                                         <rect key="frame" x="0.0" y="628" width="374" height="80"/>
                                         <constraints>
@@ -66,7 +80,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="10" id="vxo-8A-N6S"/>
                                         </constraints>
-                                        <color key="progressTintColor" red="1" green="0.45854175089999999" blue="0.6605013609" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="progressTintColor" red="1" green="0.45882352941176469" blue="0.6588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="trackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </progressView>
                                 </subviews>
@@ -88,6 +102,7 @@
                         <outlet property="falseButton" destination="tbn-vQ-GyC" id="D8y-KL-GLc"/>
                         <outlet property="progressBar" destination="TXm-qh-7Xg" id="v3c-IK-yLW"/>
                         <outlet property="questionLabel" destination="rSI-li-mhO" id="8ee-vU-7Ta"/>
+                        <outlet property="restartButton" destination="f5z-rs-Onr" id="QCH-rb-eTF"/>
                         <outlet property="trueButton" destination="oVw-Hl-IRe" id="Yqu-Vs-q4b"/>
                     </connections>
                 </viewController>

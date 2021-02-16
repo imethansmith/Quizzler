@@ -12,4 +12,8 @@ struct Question {
     let text: String
     let answer: Int
     
+    init(q: String, a: Int) {
+        text = q
+        answer = a
+    }
 }
