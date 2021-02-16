@@ -15,10 +15,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var trueButton: UIButton!
     @IBOutlet weak var falseButton: UIButton!
     
-    let quiz = [["Is Ricardo sexy?", 1],
-                ["Ethan is bald.", 1],
-                ["The sun is blue.", 0],
-                ["Cat's legitimately have nine lives.", 0]
+    let quiz = [
+        Question(text: "Ricardo is sexy", answer: 1),
+        Question(text: "Ethan is bald", answer: 1),
+        Question(text: "The sun is blue", answer: 0),
+        Question(text: "Cat's really have nine lives", answer: 0)
     ]
     
     var questionNumber = 0
@@ -31,16 +32,17 @@ class ViewController: UIViewController {
     }
 
     @IBAction func answerButtonPressed(_ sender: UIButton) {
-        var answer = 0
         // Assign binary conversion on answer given
-        if (sender.currentTitle == "True") {
-            answer = 1
-        } else {
-            answer = 0
-        }
+        let answer = { () -> Int in
+            if (sender.currentTitle == "True") {
+                return 1
+            } else {
+                return 0
+            }
+        }()
         
         // Check answer validity
-        if (answer == quiz[questionNumber][1] as! Int) {
+        if (answer == quiz[questionNumber].answer) {
             userScore += 1
             print("Right")
         } else {
@@ -50,17 +52,17 @@ class ViewController: UIViewController {
         // Update UI with next question
         questionNumber += 1
         if questionNumber < quiz.count {
-            questionLabel.text = (quiz[questionNumber][0] as! String)
+            questionLabel.text = (quiz[questionNumber].text)
         } else {
             // Complete quiz
             questionNumber = 0
-            questionLabel.text = "Completed quiz!"
+            questionLabel.text = (quiz[questionNumber].text)
         }
         print(userScore)
     }
     
     func updateUI() {
-        questionLabel.text = (quiz[questionNumber][0] as! String)
+        questionLabel.text = (quiz[questionNumber].text)
     }
 }
 
